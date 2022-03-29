@@ -10,7 +10,8 @@ export default function HomePage(){
             return (
               <>
                 <CustomNavbar></CustomNavbar>
-                <div className='container'>
+
+                <div className='container mt-3'>
                   <div className='row'>
                     <div className='col-md-8'>
                       <CustomCarousel></CustomCarousel>
