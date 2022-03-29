@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
-
+import { Link } from "react-router-dom";
 
 
 export default function MovieTable() {
@@ -21,7 +21,10 @@ export default function MovieTable() {
                         <td>Spiderman</td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
                         <td className="text-center">
-                            <Button className="mt-1" variant="outline-dark">Add Cast</Button>
+                            <Link to="/MovieCastForm">
+                             <Button className="mt-1" variant="outline-dark">Add Cast</Button>
+                            </Link>
+                          
                             <Button className="mt-1" variant="outline-dark">Update</Button>
                             <Button className="mt-1" variant="outline-dark">Delete</Button>
                         </td>

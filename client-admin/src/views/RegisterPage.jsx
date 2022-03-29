@@ -1,27 +1,31 @@
 
-import CustomNavbar from './components/CustomNavbar';
+import CustomNavbar from '../components/CustomNavbar';
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
-export default function Registerpage() {
+export default function RegisterPage() {
     return (
 
         <>
-            <div className="App">
-                {/* // NavBar */}
                 <CustomNavbar></CustomNavbar>
-
-                <Form className="d-flex justify-content-center">
+                <div className='container'>
+                    <div className='d-flex justify-content-center mt-5'>
+                
+                <Form>
+                <div>
+                    <h1 className='py-5'> Register </h1>
+                    </div>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address :</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control type="email" />
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password :</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password"  />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
                         <Form.Label>Phone Number :</Form.Label>
@@ -31,12 +35,13 @@ export default function Registerpage() {
                         <Form.Label>Address :</Form.Label>
                         <Form.Control type="text" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="warning" type="submit">
                         Submit
                     </Button>
                 </Form>
-
-            </div>
+                </div>
+                </div>
+    
         </>
 
     );

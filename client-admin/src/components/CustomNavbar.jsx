@@ -1,6 +1,6 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container'
-
+import { Link } from "react-router-dom";
 
 export default function CustomNavbar() {
 
@@ -10,13 +10,19 @@ export default function CustomNavbar() {
 
         < Navbar className="bg-light" expand="lg" >
             <Container style={{ marginLeft: "0px" }}>
-                <Navbar.Brand className="text-dark font-weight-bold" href="#home">Umdb</Navbar.Brand>
+                <Navbar.Brand >
+                <Link className="text-dark font-weight-bold"  to="/">Umdb Admin</Link>
+                    </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link className="text-dark" href="#home">Home</Nav.Link>
-                        <Nav.Link className="text-dark" href="#home">Register</Nav.Link>
-                        <Nav.Link className="text-dark" href="#home">Login</Nav.Link>
+                       
+                        <Nav.Link>
+                            <Link className="text-dark" to="/register">Register</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link className="text-dark" to="/login">Login</Link>
+                        </Nav.Link>
                         <Nav.Link className="text-dark" href="#home">Logout</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

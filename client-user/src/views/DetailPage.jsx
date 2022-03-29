@@ -1,6 +1,7 @@
 import CustomNavbar from '../components/CustomNavbar';
 import Button from 'react-bootstrap/Button';
 
+
 export default function DetailPage(){
     return (
         <>
@@ -13,7 +14,7 @@ export default function DetailPage(){
             <div className='col-md-3' style={{Height:'auto',maxWidth:'400px'}}>
               <img 
                   className="w-100"
-              src="https://www.ruparupa.com/blog/wp-content/uploads/2022/02/hdqwalls.jpg"  />
+              src="https://www.ruparupa.com/blog/wp-content/uploads/2022/02/hdqwalls.jpg" alt="" />
             </div>
             <div className='col-md-9'>
             <iframe width="800" height="400" src="https://www.youtube.com/embed/mqqft2x_Aa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
