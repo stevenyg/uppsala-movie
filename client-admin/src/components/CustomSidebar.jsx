@@ -11,21 +11,21 @@ export default function CustomSidebar() {
                          <Link to="/MovieTable" className="text-center border btn btn-warning" > Show Movies </Link> 
                     </Nav.Link>
                 </Nav.Item>
-                <Nav.Item className="py-2">
+                {/* <Nav.Item className="py-2">
                 <Nav.Link >
                          <Link to="/CastTable" className="text-center border btn btn-warning" > Show Cast </Link> 
                     </Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 <Nav.Item className="py-2">
                 <Nav.Link >
                          <Link to="/MovieForm" className="text-center border btn btn-warning" > Add Movie </Link> 
                     </Nav.Link>
                 </Nav.Item>
-                <Nav.Item className="py-2">
+                {/* <Nav.Item className="py-2">
                 <Nav.Link >
                          <Link to="/CastForm" className="text-center border btn btn-warning" > Add Cast </Link> 
                     </Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
             </div>
         </Nav>
     )
