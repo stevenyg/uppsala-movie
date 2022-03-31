@@ -53,14 +53,14 @@ Target:
 
 Target:
 
-- [ ] Lecture - Redux
-- [ ] State vs Global State
-- [ ] Bagaimana cara membuat Store
-- [ ] Bagaimana cara membuat Reducer
-- [ ] Bagaimana cara membuat Action
-- [ ] Membuat Action Creators
-- [ ] Membuat Action Types
-- [ ] Lecture - Redux-thunk (handle async)
+- [x] Lecture - Redux
+- [x] State vs Global State
+- [x] Bagaimana cara membuat Store
+- [x] Bagaimana cara membuat Reducer
+- [x] Bagaimana cara membuat Action
+- [x] Membuat Action Creators
+- [x] Membuat Action Types
+- [x] Lecture - Redux-thunk (handle async)
 - [ ] Cara menggunakan combineReducers
 
 **Report:**
@@ -71,11 +71,11 @@ Target:
 
 Target:
 
-- [ ] Lecture - SQL Advance DQL
-- [ ] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
-- [ ] Menentukan associations antar tables
-- [ ] Lecture - SQL Transaction
-- [ ] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
+- [x] Lecture - SQL Advance DQL
+- [x] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
+- [x] Menentukan associations antar tables
+- [x] Lecture - SQL Transaction
+- [x] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
 
 **Report:**
 
