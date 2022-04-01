@@ -1,0 +1,49 @@
+export const fetchSearchMovies = (payload) => {
+    return (dispatch, getState) => {
+        fetch(`http://localhost:3000/user/search/?search=${payload.search}`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                dispatch({
+                    type: 'getSearchMovies',
+                    payload: data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    }
+}
+
+export const fetchMoviesDetail = (slug, id) => {
+    return (dispatch, getState) => {
+        fetch(`http://localhost:3000/user/movies/${slug}/${id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                dispatch({
+                    type: 'getMoviesDetail',
+                    payload: data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    }
+}

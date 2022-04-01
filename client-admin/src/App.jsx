@@ -3,10 +3,9 @@ import HomePage from "./views/HomePage.jsx"
 import LoginPage from "./views/LoginPage.jsx"
 import RegisterPage from "./views/RegisterPage.jsx"
 import MovieTable from './components/MovieTable.jsx';
-// import CastTable from './components/CastTable.jsx';
-import CastForm from './components/CastForm.jsx';
+import GenreTable from './components/GenreTable.jsx';
 import MovieForm from './components/MovieForm.jsx';
-// import MovieCastForm from "./components/MovieCastForm.jsx";
+import GenreForm from "./components/GenreForm.jsx";
 
 import './App.css'
 import RequireAuth from "./components/RequireAuth.jsx";
@@ -17,19 +16,22 @@ function App() {
       <div className="App">
 
       <Routes>
+
+         <Route path="register" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
+
         <Route path="/" element={
-          // <RequireAuth>
+          <RequireAuth>
         <HomePage />
-        // </RequireAuth>
+         </RequireAuth>
         }>
           <Route path="MovieTable" element={<MovieTable />} />
-          {/* <Route path="CastTable" element={<CastTable />} /> */}
-          <Route path="CastForm/:id" element={<CastForm />} />
+          <Route path="GenreTable" element={<GenreTable />} />
           <Route path="MovieForm" element={<MovieForm />} />
-          {/* <Route path="MovieCastForm/:id" element={<MovieCastForm />} /> */}
+          <Route path="GenreForm" element={<GenreForm />} />
         </Route>
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="login" element={<LoginPage />} />
+     
+
       </Routes>
 
       </div>

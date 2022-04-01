@@ -6,7 +6,7 @@ export default function CustomList(){
         <div className='row'>
         <div className='col-md-8'>
           <div className='Container'>
-            <img className='rounded float-left py-2 ' style={{maxHeight:'200px',maxWidth:'200px'}} src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2022/02/23/98845976.jpg" alt="" srcset="" />
+            <img className='rounded float-left py-2 ' style={{maxHeight:'200px',maxWidth:'200px'}} src="https://mydirtsheet.files.wordpress.com/2022/03/adammjm2ndc2._v1_fmjpg_ux1000_.jpg" alt="" srcset="" />
           </div>
         </div>
         <div className='col-md-4'>

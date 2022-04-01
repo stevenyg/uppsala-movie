@@ -1,13 +1,19 @@
 
 const initialState = {
     user: [],
-    movies: []
+    movies: [],
+    genres: [],
+    genresDetail: []
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "user/getMovies":
+        case "getMovies":
             return { ...state, movies: action.payload }
+        case "getGenres":
+            return { ...state, genres: action.payload }
+        case "getGenresDetail":
+            return { ...state, genresDetail: action.payload }
         default:
             return state;
     }

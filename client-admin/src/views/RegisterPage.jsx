@@ -5,29 +5,32 @@ import Button from 'react-bootstrap/Button'
 import {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { fetchRegister } from '../store/actions';
+import { useNavigate } from 'react-router-dom'
 
 export default function RegisterPage() {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const [loginInput,setLoginInput] = useState({
+    const [registerInput,setRegisterInput] = useState({
         email:'',
         password:'',
         phoneNumber:'',
         address:''
     })
 
-    const loginInputHandler = (e) =>{
+    const registerInputHandler = (e) =>{
         const {value,name} = e.target
         const newInput = {
-            ...loginInput,
+            ...registerInput,
         }
         newInput[name] = value
-        setLoginInput (newInput)
+        setRegisterInput (newInput)
     }
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        dispatch(fetchRegister(loginInput))
+        dispatch(fetchRegister(registerInput))
+        navigate('/login')
     }
 
     return (
@@ -42,22 +45,22 @@ export default function RegisterPage() {
                     </div>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address :</Form.Label>
-                        <Form.Control type="email" value={loginInput.email} name="email" onChange={loginInputHandler}/>
+                        <Form.Control type="email"  name="email" onChange={registerInputHandler}/>
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password :</Form.Label>
-                        <Form.Control type="password"  value={loginInput.password} name="password" onChange={loginInputHandler} />
+                        <Form.Control type="password"   name="password" onChange={registerInputHandler} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
                         <Form.Label>Phone Number :</Form.Label>
-                        <Form.Control type="text"  value={loginInput.phoneNumber}  name="phoneNumber" onChange={loginInputHandler} />
+                        <Form.Control type="text"    name="phoneNumber" onChange={registerInputHandler} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicAddress">
                         <Form.Label>Address :</Form.Label>
-                        <Form.Control type="text"  value={loginInput.address} name="address" onChange={loginInputHandler} />
+                        <Form.Control type="text"   name="address" onChange={registerInputHandler} />
                     </Form.Group>
                     <Button variant="warning" type="submit">
                         Submit

@@ -98,23 +98,23 @@ class Controller {
 
             const movie = await Movie.create({ title, slug, rating, synopsis, trailerUrl, imageUrl, GenreId, UserId }, { transaction: t })
 
-            if (name1 !== undefined) {
-                const cast = await Cast.create({ MovieId: movie.id, name: name1, profilePicture: profilePicture1 }, { transaction: t })
-            } else {
-                const cast = await Cast.create({ MovieId: movie.id, name: "etc", profilePicture: "" }, { transaction: t })
-            }
+            // if (name1 !== undefined) {
+            const cast1 = await Cast.create({ MovieId: movie.id, name: name1, profilePicture: profilePicture1 }, { transaction: t })
+            // } else {
+            //     const cast = await Cast.create({ MovieId: movie.id, name: "etc", profilePicture: "" }, { transaction: t })
+            // }
 
-            if (name2 !== undefined) {
-                const cast = await Cast.create({ MovieId: movie.id, name: name2, profilePicture: profilePicture2 }, { transaction: t })
-            } else {
-                const cast = await Cast.create({ MovieId: movie.id, name: "etc", profilePicture: "" }, { transaction: t })
-            }
+            // if (name2 !== undefined) {
+            const cast2 = await Cast.create({ MovieId: movie.id, name: name2, profilePicture: profilePicture2 }, { transaction: t })
+            // } else {
+            //     const cast = await Cast.create({ MovieId: movie.id, name: "etc", profilePicture: "" }, { transaction: t })
+            // }
 
-            if (name3 !== undefined) {
-                const cast = await Cast.create({ MovieId: movie.id, name: name3, profilePicture: profilePicture3 }, { transaction: t })
-            } else {
-                const cast = await Cast.create({ MovieId: movie.id, name: "etc", profilePicture: "" }, { transaction: t })
-            }
+            // if (name3 !== undefined) {
+            const cast3 = await Cast.create({ MovieId: movie.id, name: name3, profilePicture: profilePicture3 }, { transaction: t })
+            // } else {
+            //     const cast = await Cast.create({ MovieId: movie.id, name: "etc", profilePicture: "" }, { transaction: t })
+            // }
 
             await t.commit();
             res.status(201).json({ message: "Movie Added" })
@@ -272,6 +272,7 @@ class Controller {
     static async addGenre(req, res, next) {
         try {
             const { name } = req.body
+            console.log(name);
             const response = await Genre.create({ name })
 
             if (!response) {

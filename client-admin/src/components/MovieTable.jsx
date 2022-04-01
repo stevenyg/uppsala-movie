@@ -20,8 +20,6 @@ export default function MovieTable() {
        dispatch(fetchMovies())
     }
 
-  
-
     return (
         <>
             <Table striped bordered hover>
@@ -45,7 +43,7 @@ export default function MovieTable() {
                             <td>{movie.synopsis}</td>
                             <td>
                             {
-                                movie.cast.map(e => {
+                                movie.Casts.map(e => {
                                     return (
                                         <span key={e.id}>{e.name} </span>
                                     )
