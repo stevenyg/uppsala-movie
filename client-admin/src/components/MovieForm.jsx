@@ -15,7 +15,13 @@ export default function MovieForm() {
         trailerUrl:'',
         imageUrl:'',
         rating:0,
-        cast:[]
+        GenreId:0,
+        name1:'',
+        profilePicture1:'',
+        name2:'',
+        profilePicture2:'',
+        name3:'',
+        profilePicture3:''
     })
 
     const movieInputHandler = (e) =>{
@@ -61,6 +67,35 @@ export default function MovieForm() {
                 <Form.Label>Rating :</Form.Label>
                 <Form.Control type="text" name="rating" onChange={movieInputHandler} />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>GenreId :</Form.Label>
+                <Form.Control type="text" name="GenreId" onChange={movieInputHandler} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Cast Name 1 :</Form.Label>
+                <Form.Control type="text" name="name1" onChange={movieInputHandler} required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Profile Picture 1 :</Form.Label>
+                <Form.Control type="text" name="profilePicture1" onChange={movieInputHandler} required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Cast Name 2 :</Form.Label>
+                <Form.Control type="text" name="name2" onChange={movieInputHandler} required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Profile Picture 2 :</Form.Label>
+                <Form.Control type="text" name="profilePicture2" onChange={movieInputHandler} required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Cast Name 3 :</Form.Label>
+                <Form.Control type="text" name="name3" onChange={movieInputHandler} required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Profile Picture 3 :</Form.Label>
+                <Form.Control type="text" name="profilePicture3" onChange={movieInputHandler} required/>
+            </Form.Group>
+            
             
             <Button variant="warning" type="submit">
                 Submit

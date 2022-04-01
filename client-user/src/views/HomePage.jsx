@@ -1,11 +1,9 @@
 import CustomNavbar from '../components/CustomNavbar';
 import CustomCarousel from '../components/CustomCarousel'
-import CustomList from '../components/CustomList';
+// import CustomList from '../components/CustomList';
 import CustomFeatureCarousel from '../components/CustomFeatureCarousel'
 
 export default function HomePage(){
-
-    
 
             return (
               <>
@@ -13,12 +11,12 @@ export default function HomePage(){
 
                 <div className='container mt-3'>
                   <div className='row'>
-                    <div className='col-md-8'>
+                    <div className='col-md-12'>
                       <CustomCarousel></CustomCarousel>
                     </div>
-                    <div className='col-md-4' >
+                    {/* <div className='col-md-4' >
                       <CustomList></CustomList>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
           
