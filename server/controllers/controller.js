@@ -130,7 +130,7 @@ class Controller {
         const t = await sequelize.transaction();
         try {
             const { id } = req.params
-            const { idcast1, idcast2, idcast3 } = req.query
+            // const { idcast1, idcast2, idcast3 } = req.query
             const { title, synopsis, trailerUrl, rating, imageUrl, GenreId, name1, profilePicture1, name2, profilePicture2, name3, profilePicture3 } = req.body
             const UserId = req.userTryingToLogin.id
             const slug = title.split(' ').join('-')
@@ -147,17 +147,17 @@ class Controller {
 
             const movie = await Movie.update({ title, slug, rating, synopsis, trailerUrl, imageUrl, GenreId, UserId }, { where: { id } }, { transaction: t })
 
-            if (name1 !== undefined) {
-                const cast = await Cast.update({ MovieId: movie.id, name: name1, profilePicture: profilePicture1 }, { where: { id: idcast1 } }, { transaction: t })
-            }
+            // if (name1 !== undefined) {
+            const cast1 = await Cast.update({ MovieId: movie.id, name: name1, profilePicture: profilePicture1 }, { where: { id: idcast1 } }, { transaction: t })
+            // }
 
-            if (name2 !== undefined) {
-                const cast = await Cast.update({ MovieId: movie.id, name: name2, profilePicture: profilePicture2 }, { where: { id: idcast2 } }, { transaction: t })
-            }
+            // if (name2 !== undefined) {
+            const cast2 = await Cast.update({ MovieId: movie.id, name: name2, profilePicture: profilePicture2 }, { where: { id: idcast2 } }, { transaction: t })
+            // }
 
-            if (name3 !== undefined) {
-                const cast = await Cast.update({ MovieId: movie.id, name: name3, profilePicture: profilePicture3 }, { where: { id: idcast3 } }, { transaction: t })
-            }
+            // if (name3 !== undefined) {
+            const cast3 = await Cast.update({ MovieId: movie.id, name: name3, profilePicture: profilePicture3 }, { where: { id: idcast3 } }, { transaction: t })
+            // }
 
             await t.commit();
             res.status(200).json({ message: "Movies Updated" })
