@@ -3,7 +3,8 @@ const initialState = {
     user: [],
     movies: [],
     genres: [],
-    genresDetail: []
+    genresDetail: [],
+    moviesDetail: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,9 +15,11 @@ const reducer = (state = initialState, action) => {
             return { ...state, genres: action.payload }
         case "getGenresDetail":
             return { ...state, genresDetail: action.payload }
+        case "getMoviesDetail":
+            return { ...state, moviesDetail: action.payload }
         default:
             return state;
     }
 }
 
-export default reducer
+module.exports = reducer

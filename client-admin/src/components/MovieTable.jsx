@@ -17,7 +17,10 @@ export default function MovieTable() {
     
     const deleteMovieHandler = (id) =>{
        dispatch(fetchDeleteMovie(id))
-       dispatch(fetchMovies())
+       .then(()=>{
+        dispatch(fetchMovies())
+       })
+ 
     }
 
     return (
@@ -51,11 +54,9 @@ export default function MovieTable() {
                              }
                             </td>
                             <td className="text-center">
-                                <Link to={'/CastForm/'+movie.id}>
-                                 <Button className="mt-1" variant="outline-dark">Add Cast</Button>
-                                </Link>
+                                <Link to={'/MovieUpdateForm/'+movie.id}>
                                 <Button className="mt-1" variant="outline-dark">Update</Button>
-                                
+                                </Link>
                                 <Button className="mt-1" variant="outline-dark" onClick={()=> deleteMovieHandler(movie.id)} >Delete</Button>
                             </td>
                         </tr>

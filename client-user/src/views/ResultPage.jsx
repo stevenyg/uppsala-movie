@@ -3,20 +3,29 @@ import CustomNavbar from "../components/CustomNavbar"
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import {  Link } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMoviesDetail } from "../store/actions";
+import { useSelector } from 'react-redux';
+import { useParams } from "react-router";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchSearchMovies } from "../store/actions";
+// import { fetchMoviesDetail } from "../store/actions";
 
 export default function ResultPage(){
     const dispatch = useDispatch()
     // const navigate = useNavigate()
-
+    const {search} = useParams()
+    console.log(search);
     const movies = useSelector(function(state){
         return state.movies
     })
+
+    useEffect(()=>{
+        dispatch(fetchSearchMovies(search))
+      },[])
     
-    const moviesDetailHandler = (slug,id) =>{
-        dispatch(fetchMoviesDetail(slug,id))
-    }
+    // const moviesDetailHandler = (slug,id) =>{
+    //     dispatch(fetchMoviesDetail(slug,id))
+    // }
     
     return (
         <>
@@ -34,9 +43,8 @@ export default function ResultPage(){
                         <Card.Text>
                         {movie.synopsis}
                         </Card.Text>
-                        {/* <Link to={`/detail/${movie.slug}/${movie.id}`} replace>  */}
-                        <Link to={`/detail`} replace> 
-                        <Button onClick={()=>moviesDetailHandler(movie.slug,movie.id)} variant="warning">Movies Detail</Button>
+                        <Link to={`/detail/${movie.slug}/${movie.id}`} > 
+                            <Button variant="warning">Movies Detail</Button>
                         </Link>
                     </Card.Body>
                 </Card>

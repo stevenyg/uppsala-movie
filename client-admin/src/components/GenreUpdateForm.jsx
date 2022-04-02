@@ -3,30 +3,36 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import {useState} from 'react'
 import { useDispatch } from 'react-redux';
-import { fetchAddGenre } from '../store/actions';
+import { fetchUpdateGenre, fetchGenreDetail } from '../store/actions';
 import { useNavigate } from 'react-router-dom'
-// import { useSelector } from 'react-redux';
-// import { useEffect} from 'react'
+import { useSelector } from 'react-redux';
+import { useEffect} from 'react'
+import {useParams} from 'react-router-dom'
 
 export default function CastForm() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const {id} = useParams()
 
-    // const genresDetail = useSelector(function(state){
-    //     return state.genresDetail
-    // })
+    const genresDetail = useSelector(function(state){
+        return state.genresDetail
+    })
     const [nameInput,setNameInput] = useState({
         name:'',
     })
 
-    // useEffect(()=>{
-    //     if (genresDetail) {
-    //         setNameInput({
-    //             name:genresDetail.name
-    //         })
-    //     }
+    useEffect(()=>{
+        dispatch(fetchGenreDetail(id))
+    },[])
 
-    // },[genresDetail])
+    useEffect(()=>{
+        // dispatch(fetchGenreDetail(id))
+        if (genresDetail) {
+            setNameInput({
+                name:genresDetail.name
+            })
+        }
+    },[genresDetail])
 
     // const [genreInput,setGenreInput] = useState(genresDetail)
 
@@ -42,8 +48,10 @@ export default function CastForm() {
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        dispatch(fetchAddGenre(nameInput))
-        navigate('/GenreTable')
+        dispatch(fetchUpdateGenre(nameInput,id))
+        .then(()=>{
+             navigate('/GenreTable')
+        })
     }
     
     return (
@@ -52,7 +60,7 @@ export default function CastForm() {
             <div className='d-flex justify-content-center'>
             <Form onSubmit={submitHandler}>
             <div>
-                    <h1 className='py-5'> Add Genre </h1>
+                    <h1 className='py-5'> Update Genre </h1>
                     </div>
             <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
                 <Form.Label>Genre :</Form.Label>

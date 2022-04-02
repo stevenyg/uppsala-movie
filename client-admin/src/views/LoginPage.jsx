@@ -33,7 +33,6 @@ export default function LoginPage() {
     const submitHandler = (e) =>{
         e.preventDefault()
         dispatch(fetchLogin(loginInput,goToHome))
-       
     }
  
 

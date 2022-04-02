@@ -27,9 +27,8 @@ export default function CustomNavbar() {
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        console.log(searchInput);
-        dispatch(fetchSearchMovies(searchInput))
-        navigate('/result')
+        // dispatch(fetchSearchMovies(searchInput))
+        navigate('/result/'+searchInput.search)
     }
 
     return (
@@ -44,7 +43,7 @@ export default function CustomNavbar() {
                         <Form onSubmit={submitHandler}>
                             <Form.Control
                                 type="search"
-                                placeholder="Search Umdb ( enter to search all )"
+                                placeholder="Search Umdb"
                                 className="me-2"
                                 aria-label="Search"
                                 name="search"

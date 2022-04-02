@@ -1,22 +1,33 @@
 import CustomNavbar from '../components/CustomNavbar';
 import Button from 'react-bootstrap/Button';
-// import { useEffect } from 'react';
-// import { useParams } from 'react-router';
+import { useEffect } from 'react';
+import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-// import { fetchMoviesDetail } from "../store/actions";
+import { fetchMoviesDetail } from "../store/actions";
+
 export default function DetailPage(){
-  // const dispatch = useDispatch()
+
+  const dispatch = useDispatch()
+  const {slug,id} = useParams()
 
   const moviesDetail = useSelector(function(state){
     return state.moviesDetail
   })
 
-// const {slug,id} = useParams()
+  const isLoading = useSelector(function(state){
+    return state.isLoadingMoviesDetail
+  })
 
-// useEffect(()=>{
-//   dispatch(fetchMoviesDetail(slug,id))
-// },[])
-// console.log(moviesDetail);
+
+  console.log(moviesDetail,'<<<<<');
+
+  useEffect(()=>{
+    dispatch(fetchMoviesDetail(slug,id))
+  },[])
+
+  if(isLoading || !moviesDetail.id ){
+    return null
+  }
 
     return (
         <>
@@ -33,7 +44,7 @@ export default function DetailPage(){
                   src={moviesDetail.imageUrl} alt="" />
                 </div>
                 <div className='col-md-9'>
-                <iframe width="800" height="400" src={moviesDetail.trailerUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="800" height="400" src={moviesDetail.trailerUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
               </div>
               <div className='row bg-warning rounded mt-5'>
@@ -49,16 +60,17 @@ export default function DetailPage(){
                 <div className='d-flex py-3'>
                
                 <h5 className='text-dark'>Cast :</h5>
-                {
-                  moviesDetail.Casts.map(cast =>{
-                    return(
-                      <Button variant="dark" className="mx-2">{cast.name}</Button>
+                  {
+                  moviesDetail.Casts.map(cast=>{
+                    return (
+                      <Button key={cast.id} variant="dark" className="mx-2">{cast.name}</Button>
                     )
                   })
                 }
-                
-                {/* <Button variant="dark" className="mx-2">thriller</Button>
-                <Button variant="dark" className="mx-2">comedy</Button> */}
+                 
+                  {/* <Button variant="dark" className="mx-2">{moviesDetail.Casts[1].name}</Button>
+                  <Button variant="dark" className="mx-2">{moviesDetail.Casts[2].name}</Button> */}
+
                 </div>
            
               </div>
