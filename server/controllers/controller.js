@@ -69,7 +69,7 @@ class Controller {
                     }
                 }
             })
-            console.log(movies);
+
 
             res.status(200).json(movies)
 
