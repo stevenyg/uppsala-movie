@@ -1,7 +1,7 @@
 
 export const fetchMovies = () => {
     return (dispatch, getState) => {
-        fetch('http://localhost:3000/movies', {
+        fetch('https://radiant-meadow-06105.herokuapp.com/movies', {
             headers: {
                 access_token: localStorage.access_token,
             },
@@ -26,7 +26,7 @@ export const fetchMovies = () => {
 
 export const fetchGenres = () => {
     return (dispatch, getState) => {
-        fetch('http://localhost:3000/genres', {
+        fetch('https://radiant-meadow-06105.herokuapp.com/genres', {
             headers: {
                 access_token: localStorage.access_token,
             },
@@ -51,7 +51,7 @@ export const fetchGenres = () => {
 
 export const fetchAddGenre = (payload) => {
     return (dispatch, getState) => {
-        fetch('http://localhost:3000/genres', {
+        fetch('https://radiant-meadow-06105.herokuapp.com/genres', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ export const fetchAddGenre = (payload) => {
 
 export const fetchUpdateGenre = (payload, id) => {
     return (dispatch, getState) => {
-        return fetch(`http://localhost:3000/genres/${id}`, {
+        return fetch(`https://radiant-meadow-06105.herokuapp.com/genres/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ export const fetchUpdateGenre = (payload, id) => {
 
 export const fetchUpdateMovie = (payload, id, cast1, cast2, cast3) => {
     return (dispatch, getState) => {
-        return fetch(`http://localhost:3000/movies/${id}/?idcast1=${cast1}&idcast2=${cast2}&idcast3=${cast3}`, {
+        return fetch(`https://radiant-meadow-06105.herokuapp.com/movies/${id}/?idcast1=${cast1}&idcast2=${cast2}&idcast3=${cast3}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export const fetchUpdateMovie = (payload, id, cast1, cast2, cast3) => {
 
 export const fetchGenreDetail = (payload) => {
     return (dispatch, getState) => {
-        return fetch(`http://localhost:3000/genres/${payload}`, {
+        return fetch(`https://radiant-meadow-06105.herokuapp.com/genres/${payload}`, {
             headers: {
                 access_token: localStorage.access_token,
             },
@@ -151,7 +151,7 @@ export const fetchGenreDetail = (payload) => {
 
 export const fetchMoviesDetail = (payload) => {
     return (dispatch, getState) => {
-        fetch(`http://localhost:3000/movies/${payload}`, {
+        fetch(`https://radiant-meadow-06105.herokuapp.com/movies/${payload}`, {
             headers: {
                 access_token: localStorage.access_token,
             },
@@ -177,7 +177,7 @@ export const fetchMoviesDetail = (payload) => {
 
 export const fetchDeleteGenre = (payload) => {
     return (dispatch, getState) => {
-        return fetch(`http://localhost:3000/genres/${payload}`, {
+        return fetch(`https://radiant-meadow-06105.herokuapp.com/genres/${payload}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -201,7 +201,7 @@ export const fetchDeleteGenre = (payload) => {
 
 export const fetchLogin = (payload, cb) => {
     return (dispatch, getState) => {
-        fetch('http://localhost:3000/login', {
+        fetch('https://radiant-meadow-06105.herokuapp.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -226,7 +226,7 @@ export const fetchLogin = (payload, cb) => {
 
 export const fetchRegister = (payload) => {
     return (dispatch, getState) => {
-        fetch('http://localhost:3000/register', {
+        fetch('https://radiant-meadow-06105.herokuapp.com/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -250,7 +250,7 @@ export const fetchRegister = (payload) => {
 
 export const fetchDeleteMovie = (id) => {
     return (dispatch, getState) => {
-        return fetch(`http://localhost:3000/movies/${id}`, {
+        return fetch(`https://radiant-meadow-06105.herokuapp.com/movies/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -274,7 +274,7 @@ export const fetchDeleteMovie = (id) => {
 
 export const fetchMovieForm = (payload) => {
     return (dispatch, getState) => {
-        return fetch('http://localhost:3000/movies', {
+        return fetch('https://radiant-meadow-06105.herokuapp.com/movies', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

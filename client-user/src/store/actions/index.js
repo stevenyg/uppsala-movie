@@ -1,6 +1,6 @@
 export const fetchSearchMovies = (payload) => {
     return (dispatch, getState) => {
-        fetch(`http://localhost:3000/user/search/?search=${payload}`, {
+        fetch(`https://radiant-meadow-06105.herokuapp.com/user/search/?search=${payload}`, {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -29,7 +29,7 @@ export const fetchMoviesDetail = (slug, id) => {
             type: 'setLoading',
             payload: true,
         })
-        fetch(`http://localhost:3000/user/movies/${slug}/${id}`, {
+        fetch(`https://radiant-meadow-06105.herokuapp.com/user/movies/${slug}/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
             },
