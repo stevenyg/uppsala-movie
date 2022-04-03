@@ -43,7 +43,7 @@ export default function CustomNavbar() {
                         <Form onSubmit={submitHandler}>
                             <Form.Control
                                 type="search"
-                                placeholder="Search Umdb"
+                                placeholder="Search Umdb Example: Spiderman, Batman, Aquaman, man"
                                 className="me-2"
                                 aria-label="Search"
                                 name="search"
